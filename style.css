@@ -1,0 +1,100 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+}
+
+.wrapper {
+  background: lightblue;
+  padding: 10px;
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-areas:
+    "h1 h1 h1"
+    "header header header"
+    "banner banner off1"
+    "banner banner off2"
+    "side-menu main main"
+    "recent main main"
+    "tags main main"
+    "footer footer footer";
+}
+.wrapper > * {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+}
+h1 {
+  background: blue;
+  grid-area: h1;
+}
+header {
+  background: red;
+  grid-area: header;
+}
+.banner {
+  background: linear-gradient(130deg, rgba(112, 18, 18, 0.5), orange, blue);
+  grid-area: banner;
+  min-height: 20vh;
+}
+.off1 {
+  background: yellow;
+  grid-area: off1;
+}
+.off2 {
+  background: red;
+  grid-area: off2;
+}
+.side-menu {
+  background: purple;
+  grid-area: side-menu;
+}
+.recent {
+  background: blue;
+  grid-area: recent;
+}
+.tags {
+  background: red;
+  grid-area: tags;
+}
+.main {
+  background: purple;
+  grid-area: main;
+}
+footer {
+  background: pink;
+  grid-area: footer;
+}
+/*ipads 1024 pc and mobile 576px*/
+@media (576px<width<=950px) {
+  .wrapper {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "h1 h1"
+      "header header"
+      "banner banner"
+      "off1 off2"
+      "side-menu main"
+      "recent main"
+      "tags main"
+      "footer footer";
+  }
+}
+@media (max-width: 576px) {
+  .wrapper {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "h1"
+      "header"
+      "banner"
+      "off1"
+      "off2"
+      "side-menu"
+      " main"
+      "recent"
+      "tags"
+      "footer";
+  }
+}
